@@ -52,6 +52,27 @@
       },
       "name": "delete-todo-request-validation-inbound",
       "policyType": "request-validation-inbound"
+    },
+    {
+      "handler": {
+        "export": "BasicAuthInboundPolicy",
+        "module": "$import(@zuplo/runtime)",
+        "options": {
+          "accounts": [
+            {
+              "data": {
+                "name": "John Doe",
+                "email": "john.doe@gmail.com"
+              },
+              "password": "$env(ACCOUNT_JOHN_PASSWORD)",
+              "username": "$env(ACCOUNT_JOHN_USERNAME)"
+            }
+          ],
+          "allowUnauthenticatedRequests": false
+        }
+      },
+      "name": "basic-auth-inbound",
+      "policyType": "basic-auth-inbound"
     }
   ]
 }
