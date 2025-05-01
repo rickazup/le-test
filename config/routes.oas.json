@@ -343,7 +343,7 @@
           },
           "policies": {
             "inbound": [
-              "basic-auth-inbound"
+              "api-key-inbound"
             ]
           }
         },
